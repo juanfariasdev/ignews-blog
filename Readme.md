@@ -5,3 +5,4 @@
     - Typescript
     - NextAuth
     - Stripe
+    - FaunaDB
