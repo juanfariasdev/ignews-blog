@@ -1,24 +1,28 @@
 
 import { useState } from 'react';
+
+import { signIn, signOut, useSession } from 'next-auth/react'
+
 import {FaGithub } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 
 import styles from './styles.module.scss';
 
 function SignInButton(){
+    const { data:session } = useSession()
     const [isUserLoggedIn, setLoggedIn] = useState(false);
 
-    return isUserLoggedIn? 
+    return session? 
     (
         <button 
         className={styles.signInButton}
         type="button"
         onClick={()=>{
-            setLoggedIn(!isUserLoggedIn)
+            signOut();
         }}
         >
             <FaGithub color="#04d361"/>
-            Juan Pablo
+            {session.user.name}
             <FiX color="#737380" className={styles.closeIcon}/>
         </button>
     ) : (
@@ -26,7 +30,7 @@ function SignInButton(){
         className={styles.signInButton}
         type="button"
         onClick={()=>{
-            setLoggedIn(!isUserLoggedIn)
+            signIn('github')
         }}
         >
             <FaGithub color="#eba417"/>
