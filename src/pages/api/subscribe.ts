@@ -31,7 +31,7 @@ type User = {
        )
 
        let customerId = user.data.stripe_customer_id
-       
+
        if(!customerId){
        const stripeCustomer = await stripe.customers.create({
         email: session.user.email,
@@ -61,7 +61,7 @@ type User = {
            payment_method_types: ['card'],
            billing_address_collection: 'required',
            line_items: [
-               {price: 'price_1Kw5tDDpD1jtESsjX02RQzTa', quantity: 1}
+               {price: 'price_1KwUwIDpD1jtESsjnwQyR1SH', quantity: 1}
            ],
            mode: 'subscription',
            allow_promotion_codes: true,
