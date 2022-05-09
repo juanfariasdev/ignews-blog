@@ -10,9 +10,9 @@ function Header(){
             <div className={styles.headerContent}>
                 <Link href={"/"}><a><Image src="/images/logo.svg" alt= "Logo IG.News" width='100%' height='100%'/></a></Link>
                 <nav>
-                <a className={styles.active}>Home</a>
-                <a>Posts</a>
-            </nav>
+                    <Link href={"/"}><a className={styles.active}>Home</a></Link>
+                    <Link href={"/posts"}><a>Posts</a></Link>
+                </nav>
 
             <SignInButton />
             </div>
