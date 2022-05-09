@@ -1,0 +1,12 @@
+{
+  "_cts": {
+    "posts-blog": {
+      "Content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}

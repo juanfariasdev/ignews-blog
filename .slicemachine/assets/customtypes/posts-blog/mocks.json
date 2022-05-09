@@ -1,0 +1,25 @@
+{
+  "id": "b6b5da47-c452-41e1-a477-d19ec78c7969",
+  "uid": "rerum-voluptatum-aut",
+  "type": "posts-blog",
+  "data": {
+    "createdAt": "2016-01-05T06:27:16.801Z",
+    "Title": "exploit value-added bandwidth",
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+    },
+    "Content": [
+      {
+        "type": "paragraph",
+        "text": "Sunt aute laborum ea enim consectetur eu non commodo. Laborum pariatur anim esse velit.",
+        "spans": []
+      }
+    ]
+  }
+}
