@@ -1,7 +1,7 @@
 {
   "_cts": {
     "posts-blog": {
-      "Content": {
+      "content": {
         "config": {
           "patternType": "PARAGRAPH",
           "blocks": 1
