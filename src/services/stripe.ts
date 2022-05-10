@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+
 import packageInfo from '../../package.json'
 
 const { version, name } = packageInfo
