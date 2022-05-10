@@ -55,7 +55,7 @@ export default function Posts({posts}: IPostsProps){
                     {
                         posts.map(post =>(
                             <article key={post.slug}>
-                                <Link href={`/posts/${post.slug}`}>
+                                <Link href={`/posts/${post.slug}`} prefetch={true}>
                                 <a>
                                     <div className={styles.picture}>
                                         <Image loader={() => post.image} src={post.image} alt={post.image_alt} width={500} height={500} layout="raw" />

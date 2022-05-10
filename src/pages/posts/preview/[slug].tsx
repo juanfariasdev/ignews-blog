@@ -1,15 +1,17 @@
-import { GetServerSideProps } from "next"
-import { getSession } from "next-auth/react"
+import { GetStaticProps } from "next"
+import { useSession } from "next-auth/react"
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { RichText } from "prismic-dom"
+import { useEffect } from "react"
 
 import { IoIosArrowBack } from "react-icons/io";
 
-import { getPrismicClient } from "../../services/prismic"
+import { getPrismicClient } from "../../../services/prismic"
 
-import styles from './post.module.scss';
+import styles from '../post.module.scss';
 
 type Post = {
     slug?: string,
@@ -18,7 +20,7 @@ type Post = {
     image_alt?: string,
     excerpt?: string,
     updateAt?: string,
-    content?: string
+    content?: any
 
 }
 interface IResponse {
@@ -26,13 +28,19 @@ interface IResponse {
     last_publication_date?: string,
     data: Post
 }
-interface IPostsProps {
+interface IPostsPreviewProps {
     post: Post
 }
 
-export default function Post({post}: IPostsProps){
+export default function PostPreview({post}: IPostsPreviewProps){
+    const {data:session} = useSession()
     const router = useRouter()
 
+    useEffect(()=>{
+        if(session?.ActiveSubscription){
+            router.push(`/posts/${post.slug}`)
+        }
+    },[session])
 
     return(
         <>
@@ -50,7 +58,7 @@ export default function Post({post}: IPostsProps){
         </section>
 
         <main>
-            <article className={styles.postContent}>
+            <article className={`${styles.postContent} ${styles.previewContent}`}>
                 <button className={styles.back} type="button" onClick={() => router.back()}> 
                 <span><IoIosArrowBack/></span>
                 
@@ -65,28 +73,30 @@ export default function Post({post}: IPostsProps){
                 <div 
                 className={styles.content}
                 dangerouslySetInnerHTML={{ __html: post.content}}/>
+
             </article>
+                <div className={styles.continueReading}>
+                    Gostaria de continuar Lendo?
+                    <Link href="/"><a>Inscreva-se agora 🤗</a></Link> 
+                </div>
         </main>
             
         </>
     )
 }
 
+export const getStaticPaths = () =>  {
+    return {
+        paths: [],
+        fallback: 'blocking'
+    }
+}
 
-export const getServerSideProps: GetServerSideProps = async ({ req, params }) => {
-    const session = await getSession({ req })
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug;
 
-    if(!session?.ActiveSubscription){
-        return {
-            redirect: {
-                destination: `/posts/preview/${slug}`,
-                permanent: false
-            }
-        }
-    }
-
-    const prismic = getPrismicClient(req)
+    const prismic = getPrismicClient()
 
     const response: IResponse = await prismic.getByUID('posts-blog',String(slug), {})
 
@@ -95,7 +105,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
             title: response.data.title?? "",
             image: response.data.image.url?? "",
             image_alt: RichText.asText(response.data.content),
-            content: RichText.asHtml(response.data.content),
+            content: RichText.asHtml(response.data.content.splice(0,5)),
             updateAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
                 day: '2-digit',
                 month: 'long',

@@ -12,8 +12,8 @@ function Header(){
             <div className={styles.headerContent}>
                 <Link href={"/"}><a><Image src="/images/logo.svg" alt= "Logo IG.News" width='100%' height='100%'/></a></Link>
                 <nav>
-                    <ActiveLink activeClassName={styles.active} href={"/"} prefetch><a>Home</a></ActiveLink>
-                    <ActiveLink activeClassName={styles.active}  href={"/posts"} prefetch><a>Posts</a></ActiveLink>
+                    <ActiveLink activeClassName={styles.active} href={"/"} prefetch={true}><a>Home</a></ActiveLink>
+                    <ActiveLink activeClassName={styles.active}  href={"/posts"} prefetch={true}><a>Posts</a></ActiveLink>
                 </nav>
 
             <SignInButton />
