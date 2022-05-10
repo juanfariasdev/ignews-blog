@@ -7,6 +7,7 @@ import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../../services/prismic';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 
 type Image = {
@@ -54,7 +55,8 @@ export default function Posts({posts}: IPostsProps){
                     {
                         posts.map(post =>(
                             <article key={post.slug}>
-                                <a href={`/posts/${post.slug}`}>
+                                <Link href={`/posts/${post.slug}`}>
+                                <a>
                                     <div className={styles.picture}>
                                         <Image loader={() => post.image} src={post.image} alt={post.image_alt} width={500} height={500} layout="raw" />
                                     </div>
@@ -64,6 +66,7 @@ export default function Posts({posts}: IPostsProps){
                                         <time>{post.updateAt}</time>
                                     </div>
                                 </a>
+                                </Link>
                             </article>
                         ))
                     }

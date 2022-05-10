@@ -44,6 +44,7 @@ body {
 
 body, input, textarea, select, button {
     font: 400 1rem "Roboto", sans-serif;
+    font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
 }
 
 button {
@@ -53,4 +54,9 @@ button {
 a {
     color: inherit;
     text-decoration: none;
+}
+main {
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding: var(--padding-page);
 }
