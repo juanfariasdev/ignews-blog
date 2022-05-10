@@ -1,22 +1,35 @@
-import Prismic from '@prismicio/client';
-import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
+import { GetStaticProps } from 'next';
+
 import { getPrismicClient } from '../../services/prismic';
 import styles from './styles.module.scss';
+import Image from 'next/image';
 
+
+type Image = {
+    url: string,
+}
 
 type Post = {
-    slug: string,
-    title: string,
-    image: string,
-    excerpt: string,
-    updateAt: string,
+    slug?: string,
+    title?: string,
+    image?: any,
+    image_alt?: string,
+    excerpt?: string,
+    updateAt?: string,
+    content?: any[]
 
 }
 
 interface IPostsProps {
-    posts: Post
+    posts: Post[]
+}
+interface IResponse {
+    uid?: string,
+    last_publication_date?: string,
+    data?: Post
 }
 
 export default function Posts({posts}: IPostsProps){
@@ -37,78 +50,22 @@ export default function Posts({posts}: IPostsProps){
             <main className={styles.container}>
 
                 <div className={styles.posts}>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <div className={styles.picture}>
-                                <img src="https://blog.rocketseat.com.br/content/images/size/w2000/2022/01/Rocketseat-jquery-historia.jpg" alt=""/>
-                            </div>
-                            <div className={styles.info}>
-                                <h2>Creating a Monorepo with Lerna & Yarn Workspace</h2>
-                                <p>In this guide, you will lear how to create a Monorepo to manage multiple packages with a share build, test and release process </p>
-                                <time>9 de Maio de 2022</time>
-                            </div>
-                        </a>
-                    </article>
+                    {
+                        posts.map(post =>(
+                            <article key={post.slug}>
+                                <a href={`/posts/${post.slug}`}>
+                                    <div className={styles.picture}>
+                                        <Image loader={() => post.image} src={post.image} alt={post.image_alt} width={500} height={500} layout="raw" />
+                                    </div>
+                                    <div className={styles.info}>
+                                        <h2>{post.title}</h2>
+                                        <p>{post.excerpt}</p>
+                                        <time>{post.updateAt}</time>
+                                    </div>
+                                </a>
+                            </article>
+                        ))
+                    }
                 </div>
             </main>
         </>
@@ -126,12 +83,13 @@ export const getStaticProps: GetStaticProps = async () => {
         pageSize: 100    
     })
 
-    const posts = response.results.map(post => {
+    const posts = response.results.map((post: IResponse) => {
         return {
-            slug: post.uid,
-            title: RichText.asText(post.data.title),
-            image: post.data.image.url;
-            excerpt: post.data.content.find(content => content.type === "paragraph")?.text ?? '',
+            slug: post.uid?? "",
+            title: post.data.title?? "",
+            image: post.data.image.url?? "",
+            image_alt: (post.data.content.find((content, key) => content.text !== '' && key > 2)?.text) ?? (post.data.content.find(content => content.text !== '')?.text ?? ''),
+            excerpt: post.data.content.find(content => content.text !== '')?.text ?? '',
             updateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
                 day: '2-digit',
                 month: 'long',
@@ -141,6 +99,6 @@ export const getStaticProps: GetStaticProps = async () => {
     })
 
     return {
-        props: {posts}
+        props: { posts }
     }
 }
