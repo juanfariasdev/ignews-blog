@@ -19,15 +19,20 @@
 
 O projeto tem como objetivo o estudo e desenvolvimento de um blog ultilizando NextJS, Next-Auth, FaunaDB e o Prismic CMS.
 
-A aplicação foi desenvolvida utilizando o framework NextJS aplicando conceitos como consumo de API externas, API Root, Server Side Rendering (SSR), Static Site Generation (SSG), STRIPE para pagamentos das subscriptions, NextAuth para autenticação com Github, FaunaDB para armazenar as informações do usuário em um banco de dados e Prismic CMS para adição e gerenciamento do conteúdo dos posts.
+Minha "Versão" não está fiel ao original. Resolvi transformar em algo um pouco mais "Original" e corrigindo algumas funcionalidades como a responsividade que não possui no projeto original.
 
-O projeto foi desenvolvido como pratica das aulas do modulo 03 do [Ignite da Rocketseat](https://rocketseat.com.br/)
+A aplicação foi desenvolvida utilizando o NextJS com as funções de consumo de API externas, Server Side Rendering (SSR) e Static Site Generation (SSG)
+STRIPE para pagamentos das subscriptions
+NextAuth para autenticação com Github
+FaunaDB para armazenar as informações do usuário em um banco de dados
+Prismic CMS para adição e gerenciamento do conteúdo dos posts.
 
+O projeto original foi desenvolvido como pratica das aulas do modulo 03 do [Ignite da Rocketseat](https://rocketseat.com.br/)
 ---
 
 ## 🚀 Tecnologias
 
-Abaixo as tecnologias utilizadas para construção da aplicação
+Tecnologias utilizadas para construção da aplicação
 
 - [ReactJS](https://reactjs.org/)
 - [NextJS](https://nextjs.org/)
@@ -98,3 +103,6 @@ Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações
 Feito por Juan Pablo Farias 👋
 
 Documentação Baseado na do https://github.com/nelsonsantosaraujo/ignews
+
+
+# FOTOS SERÃO ADICIONADAS 
