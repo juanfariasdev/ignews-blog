@@ -15,7 +15,7 @@
  <a href="#licença">Licença</a> •
 </p>
 
-## Sobre o projeto
+## 🎯 Sobre o projeto
 
 O projeto tem como objetivo o estudo e desenvolvimento de um blog ultilizando NextJS, Next-Auth, FaunaDB e o Prismic CMS.
 
@@ -25,7 +25,7 @@ O projeto foi desenvolvido como pratica das aulas do modulo 03 do [Ignite da Roc
 
 ---
 
-## Tecnologias
+## 🚀 Tecnologias
 
 Abaixo as tecnologias utilizadas para construção da aplicação
 
@@ -41,7 +41,7 @@ Abaixo as tecnologias utilizadas para construção da aplicação
 
 ## Configurações necessárias
 
-### **Requisitos**
+### ✅ **Requisitos**
 
 Necessário realizar as instalações:
 
@@ -57,7 +57,7 @@ Criar conta e configurar os serviços externos:
 
 *Configurações dos serviços estão localizadas no arquivo servicesConfig.md na raiz do projeto.*
 
-### **Clone do projeto**
+### 🏁 **Clone do projeto**
 
 ```bash
 # Execute o comando git clone para realizar o clone do repositório
@@ -95,4 +95,4 @@ Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações
 
 ## Autor
 
-Feito por Juan Pablo Farias 👋🏽 Entre em contato!
+Feito por Juan Pablo Farias 👋
