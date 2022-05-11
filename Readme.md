@@ -5,7 +5,7 @@
 <h1 align="center">
     IG.News - Next.js
 </h1>
-<p align="center">Aplicação para inscrição de newsletter com pagamento via stripe</p>
+<p align="center">Aplicação de um blog, com conteúdo limitado para não assinantes com pagamento via stripe</p>
 
 
 <p align="center">
@@ -96,3 +96,5 @@ Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações
 ## Autor
 
 Feito por Juan Pablo Farias 👋
+
+Documentação Baseado na do https://github.com/nelsonsantosaraujo/ignews
