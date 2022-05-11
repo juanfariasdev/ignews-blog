@@ -105,4 +105,7 @@ Feito por Juan Pablo Farias 👋
 Documentação Baseado na do https://github.com/nelsonsantosaraujo/ignews
 
 
-# FOTOS SERÃO ADICIONADAS 
+## Prints
+![Screenshots](screenshots/home.png)
+![Screenshots](screenshots/posts.png)
+![Screenshots](screenshots/singlePost.png)
