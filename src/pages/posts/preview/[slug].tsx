@@ -53,6 +53,7 @@ export default function PostPreview({post}: IPostsPreviewProps){
                         src={post.image} alt={post.image_alt}
                         layout='fill'
                         objectFit='cover' 
+                        priority={true}
                     />
                 </div>
         </section>
