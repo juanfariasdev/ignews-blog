@@ -9,11 +9,11 @@
 
 
 <p align="center">
- <a href="#sobre-o-projeto">Sobre o Projeto</a> •
- <a href="#tecnologias">Tecnologias</a> •
- <a href="#configurações-necessárias">Configurações necessárias</a> •
- <a href="#licença">Licença</a> •
- <a href="#site-em-produção">Site em Produção</a> •
+ • <a href="#sobre-o-projeto">Sobre o Projeto</a>
+ • <a href="#tecnologias">Tecnologias</a>
+ • <a href="#configurações-necessárias">Configurações necessárias</a>
+ • <a href="#site-em-produção">Site em Produção</a>
+ • <a href="#licença">Licença</a>
 </p>
 
 ## 🎯 Sobre o projeto
