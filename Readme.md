@@ -13,6 +13,7 @@
  <a href="#tecnologias">Tecnologias</a> •
  <a href="#configurações-necessárias">Configurações necessárias</a> •
  <a href="#licença">Licença</a> •
+ <a href="#site-em-produção">Site em Produção</a> •
 </p>
 
 ## 🎯 Sobre o projeto
@@ -89,6 +90,11 @@ $ stripe listen --forward-to localhost:3000/api/webhooks
 $ yarn dev
 
 ```
+
+---
+## Site em Produção
+
+A aplicação está atualmente em produção. Confira [aqui](https://ignews-two-iota.vercel.app)
 
 ---
 
