@@ -18,12 +18,15 @@ export default function Home({product}: IHomeProps) {
   return (
     <>
     <Head>
-      <title>Home | IG.News</title>
+      <title>Home | JF.News</title>
     </Head>
     <main className={styles.contentContainer}>
       <section className={styles.hero}>
         <span>👏 Hey, welcome</span>
         <h1>News about the <span>React</span> world.</h1>
+        <p>The charge <b>isn't real</b>, this is just a portfolio project</p>
+        <p>Nothing will actually be debited from the card</p>
+        <br/>
         <p>
           Get access to all the publications <br/>
           <span>for {product.amount} month</span>
@@ -31,7 +34,7 @@ export default function Home({product}: IHomeProps) {
         <SubscribeButton priceId={product.priceId} />
       </section>
 
-      <img src="/images/avatar.svg" alt="Girl coding"  />
+      <img src="/images/avatar.svg" alt="Girl coding" />
       </main>
     </>
   )

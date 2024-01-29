@@ -37,7 +37,7 @@ export default function Post({post}: IPostsProps){
     return(
         <>
         <Head>
-            <title>{post.title} | Ig.News</title>
+            <title>{post.title} | JF.News</title>
         </Head>
         <section>
                 <div style={{width: '100%', height: '450px', position: 'relative'}}>

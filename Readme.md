@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img alt="Logo" src="./public/images/logo.svg" alt="ig.News">
+  JF.News
 </h1>
 
 <h1 align="center">
-    IG.News - Next.js
+    JF.News - Next.js
 </h1>
 <p align="center">Aplicação de um blog, com conteúdo limitado para não assinantes com pagamento via stripe</p>
 
@@ -19,8 +19,6 @@
 ## 🎯 Sobre o projeto
 
 O projeto tem como objetivo o estudo e desenvolvimento de um blog ultilizando NextJS, Next-Auth, FaunaDB e o Prismic CMS.
-
-Minha "Versão" não está fiel ao original. Resolvi transformar em algo um pouco mais "Original" e corrigindo algumas funcionalidades como a responsividade que não possui no projeto original.
 
 A aplicação foi desenvolvida utilizando o NextJS com as funções de consumo de API externas, Server Side Rendering (SSR) e Static Site Generation (SSG)
 STRIPE para pagamentos das subscriptions

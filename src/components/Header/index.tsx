@@ -10,7 +10,7 @@ function Header(){
     return(
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <Link href={"/"}><Image src="/images/logo.svg" alt= "Logo IG.News" width={150} height={50} layout="raw"/></Link>
+                <Link href={"/"}><h1>JF.News</h1></Link>
                 <nav>
                     <ul className={styles.nav_menu}>
                         <li>

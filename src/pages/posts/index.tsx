@@ -43,7 +43,7 @@ export default function Posts({posts}: IPostsProps){
 
             <section className={styles.blogTitle}>
                 <div>
-                    <h1>Blog da IG.News</h1>
+                    <h1>Blog do JF.News</h1>
                     <p>Junte-se a milhares de devs e acelere na direção dos seus objetivos. Transforme sua carreira em uma jornada de evolução contínua através das melhores tecnologias.</p>
                 </div>
                 

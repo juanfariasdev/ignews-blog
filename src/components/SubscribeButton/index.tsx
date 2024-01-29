@@ -19,6 +19,7 @@ function SubscribeButton({priceId}: ISubscribeButtonProps){
             signIn('github')
             return;
         }
+        
 
         if(session.ActiveSubscription){
             router.push('/posts');
