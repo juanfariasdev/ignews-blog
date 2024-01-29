@@ -112,4 +112,9 @@ Documentação Baseado na do https://github.com/nelsonsantosaraujo/ignews
 ## Prints
 ![Screenshots](screenshots/home.png)
 ![Screenshots](screenshots/posts.png)
+
+### Caso não tenha pago:
 ![Screenshots](screenshots/singlePost.png)
+
+### Caso tenha pago:
+![Screenshots](screenshots/singlePayPost.png)
