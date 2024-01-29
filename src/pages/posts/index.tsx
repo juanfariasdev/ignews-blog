@@ -55,8 +55,8 @@ export default function Posts({posts}: IPostsProps){
                     {
                         posts.map(post =>(
                             <article key={post.slug}>
-                                <Link href={`/posts/${post.slug}`} prefetch={true}>
-                                <a>
+                                <Link href={`/posts/${post.slug}`}>
+                          
                                     <div className={styles.picture}>
                                         <Image loader={() => post.image} src={post.image} alt={post.image_alt} width={500} height={500} layout="raw" />
                                     </div>
@@ -65,7 +65,7 @@ export default function Posts({posts}: IPostsProps){
                                         <p>{post.excerpt}</p>
                                         <time>{post.updateAt}</time>
                                     </div>
-                                </a>
+                               
                                 </Link>
                             </article>
                         ))

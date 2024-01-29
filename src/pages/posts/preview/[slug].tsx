@@ -78,7 +78,7 @@ export default function PostPreview({post}: IPostsPreviewProps){
             </article>
                 <div className={styles.continueReading}>
                     Gostaria de continuar Lendo?
-                    <Link href="/"><a>Inscreva-se agora 🤗</a></Link> 
+                    <Link href="/">Inscreva-se agora 🤗</Link> 
                 </div>
         </main>
             

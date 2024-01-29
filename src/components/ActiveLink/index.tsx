@@ -8,14 +8,14 @@ interface IProps extends LinkProps {
     activeClassName?: string
 }
 
-function ActiveLink({children, activeClassName, ...rest}: IProps){
+function ActiveLink({children, activeClassName, href, ...rest}: IProps){
 
     const { asPath } = useRouter();
 
-    const className = asPath === rest.href? activeClassName : '';
+    const className = asPath === href? activeClassName : '';
     
     return(
-        <Link {...rest}>
+        <Link {...rest} href={String(href)} className={className}>
             {cloneElement(children, {
                 className
             })}

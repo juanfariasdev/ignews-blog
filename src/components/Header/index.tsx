@@ -10,14 +10,14 @@ function Header(){
     return(
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <Link href={"/"}><a><Image src="/images/logo.svg" alt= "Logo IG.News" width='150px' height='50px' layout="raw"/></a></Link>
+                <Link href={"/"}><Image src="/images/logo.svg" alt= "Logo IG.News" width={150} height={50} layout="raw"/></Link>
                 <nav>
                     <ul className={styles.nav_menu}>
                         <li>
-                            <ActiveLink activeClassName={styles.active} href={"/"} prefetch={true}><a>Home</a></ActiveLink>
+                            <ActiveLink activeClassName={styles.active} href={"/"}><>Home</></ActiveLink>
                         </li>
                         <li>
-                            <ActiveLink activeClassName={styles.active}  href={"/posts"} prefetch={true}><a>Posts</a></ActiveLink>
+                            <ActiveLink activeClassName={styles.active}  href={"/posts"}><>Posts</></ActiveLink>
                         </li>
                     </ul>
                 </nav>
