@@ -24,7 +24,7 @@ export default function Home({product}: IHomeProps) {
       <section className={styles.hero}>
         <span>👏 Hey, welcome</span>
         <h1>News about the <span>React</span> world.</h1>
-        <p>The charge <b>isn't real</b>, this is just a portfolio project</p>
+        <p>The charge <b>isn&apos;t real</b>, this is just a portfolio project</p>
         <p>Nothing will actually be debited from the card</p>
         <br/>
         <p>
